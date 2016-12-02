@@ -1,0 +1,10 @@
+{% if actual_jobs %} 
+    <h1>Jobs to Apply</h1>
+    <ul>
+    {% for job in actual_jobs %}
+        <li><a href="{% url 'jobs:detail' job.id %}">{{ job.job_title }} | ${{job.salary}}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <h2>There is no jobs to apply right now. come back later.</h2>
+{% endif %}
